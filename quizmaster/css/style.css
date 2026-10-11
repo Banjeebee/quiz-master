@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e8beee;
+    color: #29243d;
+    text-align: center;
+}
+
+.app-header {
+    background-color: #9994dd;
+    color: white;
+    padding: 16px;
+}
+
+main {
+    padding: 20px;
+}
+
+/* hide screen by default*/
+.screen {
+    display: none;
+}
+
+.screen.active  {
+    display: block;
+}
+
+button {
+    background-color: #4a3fd6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    margin: 8px;
+    cursor: pointer;
+}
+
+footer {
+    padding: 16px;
+    font-size: 0.8rem;
+}
