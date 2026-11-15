@@ -1,3 +1,14 @@
+:root {
+    --primary: #9994dd;
+    --primary-dark: #4a3fd6;
+    --bg: #e8beee;
+    --card-bg: #ffffff;
+    --text: #29243d;
+    --correct: #2e9e5b;
+    --wrong: #da3c3c;
+    --radius: 12px
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,32 +17,52 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #e8beee;
-    color: #29243d;
+    background-color: var(--bg);
+    color: var(--text);
     text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .app-header {
-    background-color: #9994dd;
-    color: white;
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--card-bg);
     padding: 16px;
 }
 
 main {
+    width: 100%;
+    max-width: 480px;
     padding: 20px;
+    flex: 1;
 }
 
 /* hide screen by default*/
 .screen {
     display: none;
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .screen.active  {
     display: block;
 }
 
+.screen h2 {
+    margin-bottom: 12px;
+}
+
+.screen p  {
+    margin-bottom: 16px;
+}
+
 button {
-    background-color: #4a3fd6;
+    background-color: var(--primary-dark);
     color: white;
     border: none;
     border-radius: 8px;
@@ -39,9 +70,59 @@ button {
     font-size: 1rem;
     margin: 8px;
     cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-btn {
+    width: 100%;
+    margin: 6px 0;
+    text-align: left;
+    background-color: white;
+    color: var(--text);
+    border: 2px solid var(--primary);
+}
+
+.option-btn:hover {
+    background-color: #eaf1ff;
+}
+
+.option-btn.correct {
+    background-color: var(--correct);
+    border-color: var(--correct);
+    color: white;
+}
+
+.option-btn.wrong {
+    background-color: var(--wrong);
+    border-color: var(--wrong);
+    color: white;
 }
 
 footer {
     padding: 16px;
     font-size: 0.8rem;
+}
+
+/*bigger screen*/
+@media (min-width: 600px) {
+    main {
+        padding: 40px 20px;
+    }
+
+    .app-header {
+        font-size: 2.2rem;
+    }
 }
